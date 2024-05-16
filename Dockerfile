@@ -1,7 +1,7 @@
 # GenieACS v1.2 Dockerfile #
 ############################
 
-FROM node:12-buster
+FROM node:16-buster
 
 RUN apt-get update && apt-get install -y sudo supervisor git
 RUN mkdir -p /var/log/supervisor
