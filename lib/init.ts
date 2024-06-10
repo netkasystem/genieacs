@@ -41,6 +41,10 @@ declare("InternetGatewayDevice.LANDevice.*.WLANConfiguration.*.KeyPassphrase", {
 declare("InternetGatewayDevice.LANDevice.*.Hosts.Host.*.HostName", {path: hourly, value: hourly});
 declare("InternetGatewayDevice.LANDevice.*.Hosts.Host.*.IPAddress", {path: hourly, value: hourly});
 declare("InternetGatewayDevice.LANDevice.*.Hosts.Host.*.MACAddress", {path: hourly, value: hourly});
+// get all parameters under InternetGatewayDevice
+declare(“InternetGatewayDevice.*”, {path: Date.now(), value: Date.now()});
+declare(“InternetGatewayDevice.*.*”, {path: Date.now(), value: Date.now()});
+declare(“InternetGatewayDevice.*.*.*”, {path: Date.now(), value: Date.now()});
 `.trim();
 
 const INFORM_SCRIPT = `
@@ -50,7 +54,7 @@ const username = declare("DeviceID.ID", {value: 1}).value[0]
 // Password will be fixed for a given device because Math.random() is seeded with device ID by default.
 const password = Math.trunc(Math.random() * Number.MAX_SAFE_INTEGER).toString(36);
 
-const informInterval = 300;
+const informInterval = 60;
 
 // Refresh values daily
 const daily = Date.now(86400000);
