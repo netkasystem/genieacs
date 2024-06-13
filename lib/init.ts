@@ -41,10 +41,9 @@ declare("InternetGatewayDevice.LANDevice.*.WLANConfiguration.*.KeyPassphrase", {
 declare("InternetGatewayDevice.LANDevice.*.Hosts.Host.*.HostName", {path: hourly, value: hourly});
 declare("InternetGatewayDevice.LANDevice.*.Hosts.Host.*.IPAddress", {path: hourly, value: hourly});
 declare("InternetGatewayDevice.LANDevice.*.Hosts.Host.*.MACAddress", {path: hourly, value: hourly});
-// get all parameters under InternetGatewayDevice
-declare(“InternetGatewayDevice.*”, {path: Date.now(), value: Date.now()});
-declare(“InternetGatewayDevice.*.*”, {path: Date.now(), value: Date.now()});
-declare(“InternetGatewayDevice.*.*.*”, {path: Date.now(), value: Date.now()});
+// get all parameters under InternetGatewayDevice and Device
+declare("InternetGatewayDevice.*", {path: Date.now(), value: Date.now()});
+declare("Device.*", {path: Date.now(), value: Date.now()});
 `.trim();
 
 const INFORM_SCRIPT = `
